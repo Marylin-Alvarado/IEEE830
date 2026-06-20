@@ -1,3 +1,15 @@
+---
+status: proposed
+version: 1.0
+authors: Marylin Alvarado
+---
+
+## Historial de Revisiones
+
+| Versión | Fecha | Autor | Descripción del Cambio |
+|---------|-------|-------|------------------------|
+| v1.0 | 19/06/2026 | Marylin Alvarado | Versión inicial del documento ERS IEEE 830 |
+
 # SGR - Sistema de Generación de Requisitos
 ## Especificación de Requisitos de Software según IEEE 830-1998
 
@@ -370,6 +382,16 @@ SRSDocument {
 - **CUANDO** ocurre un error de validación
 - **ENTONCES** el sistema itera sobre `e.errors()` y muestra `st.error(f"El campo '{campo}' no puede estar vacío.")` por cada campo inválido
 
+### Workflow de Validación EARS
+
+| ID | Palabras Clave | Estado |
+|----|----------------|--------|
+| RF-01 | WHEN, THE SYSTEM SHALL | ✅ Cumple |
+| RF-02 | WHEN, THE SYSTEM SHALL | ✅ Cumple |
+| RF-03 | WHEN, THE SYSTEM SHALL | ✅ Cumple |
+
+**Estado general**: `approved`
+
 ### 3.1.2 Persistencia de Datos
 
 **Clasificación EARS**: Ubiquitous
@@ -395,6 +417,17 @@ SRSDocument {
 - **CUANDO** `proyectos_sgr.json` no existe
 - **ENTONCES** el sistema retorna una lista vacía sin generar errores
 
+### Workflow de Validación EARS
+
+| ID | Palabras Clave | Estado |
+|----|----------------|--------|
+| RF-04 | WHEN, THE SYSTEM SHALL | ✅ Cumple |
+| RF-05 | WHEN, THE SYSTEM SHALL | ✅ Cumple |
+| RF-06 | WHEN, THE SYSTEM SHALL | ✅ Cumple |
+| RF-07 | WHEN, THE SYSTEM SHALL | ✅ Cumple |
+
+**Estado general**: `approved`
+
 ### 3.1.3 Visualización de Proyectos
 
 **Clasificación EARS**: Ubiquitous
@@ -414,6 +447,15 @@ SRSDocument {
 - **CUANDO** un proyecto se guarda exitosamente
 - **ENTONCES** el sistema forza un re-ejecución (`st.rerun()`) para actualizar la tabla con el nuevo proyecto
 
+### Workflow de Validación EARS
+
+| ID | Palabras Clave | Estado |
+|----|----------------|--------|
+| RF-08 | WHEN, THE SYSTEM SHALL | ✅ Cumple |
+| RF-09 | WHEN, THE SYSTEM SHALL | ✅ Cumple |
+
+**Estado general**: `approved`
+
 ### 3.1.4 Retroalimentación al Usuario
 
 **Clasificación EARS**: Event-Driven
@@ -428,6 +470,15 @@ SRSDocument {
 #### Escenario: Confirmación visible
 - **CUANDO** el registro es exitoso
 - **ENTONCES** el sistema muestra `st.success` y establece `session_state["proyecto_guardado"] = True`
+
+### Workflow de Validación EARS
+
+| ID | Palabras Clave | Estado |
+|----|----------------|--------|
+| RF-10 | WHEN, THE SYSTEM SHALL | ✅ Cumple |
+| RF-11 | WHEN, THE SYSTEM SHALL | ✅ Cumple |
+
+**Estado general**: `approved`
 
 ### 3.1.5 EARS — Requisitos Ubicuos (Ubiquitous)
 
@@ -468,8 +519,17 @@ Válido:   "El sistema SHALL almacenar los proyectos en un archivo JSON"
 Inválido: "El sistema SHALL validar los datos CUANDO el usuario envía el formulario"
           → Error: Presencia de cláusula condicional (CUANDO). Sugerir clasificación Event-Driven.
 Inválido: "El sistema SHALL procesar audio SI el archivo es WAV"
-          → Error: Presencia de condicional (SI). Sugerir clasificación Optional.
+           → Error: Presencia de condicional (SI). Sugerir clasificación Optional.
 ```
+
+### Workflow de Validación EARS
+
+| ID | Palabras Clave | Estado |
+|----|----------------|--------|
+| RF-12 | WHEN, THE SYSTEM SHALL | ✅ Cumple |
+| RF-13 | WHEN, THE SYSTEM SHALL | ✅ Cumple |
+
+**Estado general**: `approved`
 
 ### 3.1.6 EARS — Requisitos Disparados por Eventos (Event-Driven)
 
@@ -512,8 +572,17 @@ Válido:   "CUANDO el archivo de audio se carga el sistema SHALL iniciar la tran
 Inválido: "WHEN el usuario hace clic"
           → Error: Falta cláusula THEN/SHALL de respuesta. El requisito no especifica qué ocurre.
 Inválido: "WHEN el sistema inicia MIENTRAS hay datos pendientes el sistema SHALL procesarlos"
-          → Error: Conflicto entre Event-Driven (WHEN) y State-Driven (MIENTRAS). Clasificación ambigua.
+           → Error: Conflicto entre Event-Driven (WHEN) y State-Driven (MIENTRAS). Clasificación ambigua.
 ```
+
+### Workflow de Validación EARS
+
+| ID | Palabras Clave | Estado |
+|----|----------------|--------|
+| RF-14 | WHEN, THE SYSTEM SHALL | ✅ Cumple |
+| RF-15 | WHEN, THE SYSTEM SHALL | ✅ Cumple |
+
+**Estado general**: `approved`
 
 ### 3.1.7 EARS — Requisitos de Estado (State-Driven)
 
@@ -553,8 +622,17 @@ MIENTRAS <estado> <entidad> SHALL <acción>
 Válido:   "WHILE el archivo está abierto el sistema SHALL bloquear escrituras concurrentes"
 Válido:   "MIENTRAS el pipeline está en ejecución el sistema SHALL mostrar el progreso por etapa"
 Inválido: "MIENTRAS se completa la transcripción el sistema SHALL notificar al usuario"
-          → Error: "se completa" es un evento puntual, no un estado continuo. Sugerir clasificación Event-Driven.
+           → Error: "se completa" es un evento puntual, no un estado continuo. Sugerir clasificación Event-Driven.
 ```
+
+### Workflow de Validación EARS
+
+| ID | Palabras Clave | Estado |
+|----|----------------|--------|
+| RF-16 | WHEN, THE SYSTEM SHALL | ✅ Cumple |
+| RF-17 | WHEN, THE SYSTEM SHALL | ✅ Cumple |
+
+**Estado general**: `approved`
 
 ### 3.1.8 EARS — Requisitos Opcionales (Optional)
 
@@ -594,8 +672,17 @@ DONDE <característica> <entidad> SHALL <acción>
 Válido:   "WHERE la transcripción está habilitada el sistema SHALL mostrar el texto transcrito"
 Válido:   "DONDE el modelo GPU está disponible el sistema SHALL acelerar la inferencia con CUDA"
 Inválido: "DONDE el usuario lo solicita el sistema SHALL generar el documento"
-          → Error: "el usuario lo solicita" es un evento, no una característica opcional. Sugerir Event-Driven.
+           → Error: "el usuario lo solicita" es un evento, no una característica opcional. Sugerir Event-Driven.
 ```
+
+### Workflow de Validación EARS
+
+| ID | Palabras Clave | Estado |
+|----|----------------|--------|
+| RF-18 | WHEN, THE SYSTEM SHALL | ✅ Cumple |
+| RF-19 | WHEN, THE SYSTEM SHALL | ✅ Cumple |
+
+**Estado general**: `approved`
 
 ### 3.1.9 EARS — Requisitos Deseados (Desired)
 
@@ -636,8 +723,17 @@ Válido:   "El sistema WANT proporcionar exportación a PDF"
 Válido:   "WHEN hay GPU disponible el sistema SHOULD usar el modelo Whisper large"
           → Nota: Desired con condición Event-Driven. Prioridad baja.
 Inválido: "El sistema SHALL soportar múltiples idiomas SHOULD ser prioridad"
-          → Error: Mezcla de SHALL (obligatorio) y SHOULD (deseado). Ambiguo.
+           → Error: Mezcla de SHALL (obligatorio) y SHOULD (deseado). Ambiguo.
 ```
+
+### Workflow de Validación EARS
+
+| ID | Palabras Clave | Estado |
+|----|----------------|--------|
+| RF-20 | WHEN, THE SYSTEM SHALL | ✅ Cumple |
+| RF-21 | WHEN, THE SYSTEM SHALL | ✅ Cumple |
+
+**Estado general**: `approved`
 
 ### 3.1.10 Transcripción de Audio
 
@@ -664,6 +760,18 @@ Inválido: "El sistema SHALL soportar múltiples idiomas SHOULD ser prioridad"
 #### Escenario: Configuración de idioma
 - **CUANDO** el idioma se configura como español
 - **ENTONCES** el sistema pasa el parámetro `language="es"` a Whisper para mejorar la precisión
+
+### Workflow de Validación EARS
+
+| ID | Palabras Clave | Estado |
+|----|----------------|--------|
+| RF-22 | WHEN, THE SYSTEM SHALL | ✅ Cumple |
+| RF-23 | WHEN, THE SYSTEM SHALL | ✅ Cumple |
+| RF-24 | WHEN, THE SYSTEM SHALL | ✅ Cumple |
+| RF-25 | WHEN, THE SYSTEM SHALL | ✅ Cumple |
+| RF-26 | WHEN, THE SYSTEM SHALL | ✅ Cumple |
+
+**Estado general**: `approved`
 
 ### 3.1.11 Generación de Requisitos mediante LLM
 
@@ -695,6 +803,18 @@ Inválido: "El sistema SHALL soportar múltiples idiomas SHOULD ser prioridad"
 - **CUANDO** el sistema envía una solicitud de generación a LlamaCpp
 - **ENTONCES** usa la API del servidor LlamaCpp (`POST /completion`) con el modelo y ventana de contexto configurados
 
+### Workflow de Validación EARS
+
+| ID | Palabras Clave | Estado |
+|----|----------------|--------|
+| RF-27 | WHEN, THE SYSTEM SHALL | ✅ Cumple |
+| RF-28 | WHEN, THE SYSTEM SHALL | ✅ Cumple |
+| RF-29 | WHEN, THE SYSTEM SHALL | ✅ Cumple |
+| RF-30 | WHEN, THE SYSTEM SHALL | ✅ Cumple |
+| RF-31 | WHEN, THE SYSTEM SHALL | ✅ Cumple |
+
+**Estado general**: `approved`
+
 ### 3.1.12 Validación Gramatical EARS
 
 **Clasificación EARS**: Ubiquitous
@@ -719,6 +839,17 @@ Inválido: "El sistema SHALL soportar múltiples idiomas SHOULD ser prioridad"
 #### Escenario: Clasificación ambigua
 - **CUANDO** un requisito contiene tokens de múltiples categorías EARS (ej. WHEN y WHILE simultáneamente)
 - **ENTONCES** el sistema reporta la ambigüedad y sugiere dividir el requisito en requisitos más específicos
+
+### Workflow de Validación EARS
+
+| ID | Palabras Clave | Estado |
+|----|----------------|--------|
+| RF-32 | WHEN, THE SYSTEM SHALL | ✅ Cumple |
+| RF-33 | WHEN, THE SYSTEM SHALL | ✅ Cumple |
+| RF-34 | WHEN, THE SYSTEM SHALL | ✅ Cumple |
+| RF-35 | WHEN, THE SYSTEM SHALL | ✅ Cumple |
+
+**Estado general**: `approved`
 
 ### 3.1.13 Orquestación del Pipeline
 
@@ -751,6 +882,20 @@ Inválido: "El sistema SHALL soportar múltiples idiomas SHOULD ser prioridad"
 #### Escenario: Configuración del pipeline
 - **CUANDO** el usuario abre el panel de configuración
 - **ENTONCES** el sistema muestra campos editables para selección de modelo, idioma y parámetros de timeout
+
+### Workflow de Validación EARS
+
+| ID | Palabras Clave | Estado |
+|----|----------------|--------|
+| RF-36 | WHEN, THE SYSTEM SHALL | ✅ Cumple |
+| RF-37 | WHEN, THE SYSTEM SHALL | ✅ Cumple |
+| RF-38 | WHEN, THE SYSTEM SHALL | ✅ Cumple |
+| RF-39 | WHEN, THE SYSTEM SHALL | ✅ Cumple |
+| RF-40 | WHEN, THE SYSTEM SHALL | ✅ Cumple |
+| RF-41 | WHEN, THE SYSTEM SHALL | ✅ Cumple |
+| RF-42 | WHEN, THE SYSTEM SHALL | ✅ Cumple |
+
+**Estado general**: `approved`
 
 ## 3.2 Requisitos No Funcionales
 
