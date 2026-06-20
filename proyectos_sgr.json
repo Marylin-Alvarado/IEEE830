@@ -1,0 +1,20 @@
+[
+  {
+    "nombre_proyecto": "SGR-Investigacion",
+    "objetivo_general": "Automatizar el ciclo de vida de los proyectos de investigación científica mediante una plataforma web que integre el seguimiento de hitos, la asignación de presupuestos y la validación automática de requisitos según los estándares de la UTPL.",
+    "descripcion_dominio": "El sistema interactúa con dos roles principales: Investigadores y Administradores. Los investigadores pueden subir sus propuestas en formato PDF y registrar sus horas dedicadas. Cuando un investigador supera el presupuesto asignado en un rubro, el sistema debe bloquear el gasto y enviar una alerta. Si un proyecto alcanza el 100% de sus hitos sin subir el informe técnico final, el sistema restringe la creación de nuevos proyectos para ese autor.",
+    "fecha_registro": "2026-06-19 21:19:00"
+  },
+  {
+    "nombre_proyecto": "SGR-Investigacion",
+    "objetivo_general": "Automatizar el ciclo de vida de los proyectos de investigación científica mediante una plataforma web que integre el seguimiento de hitos, la asignación de presupuestos y la validación automática de requisitos según los estándares de la UTPL.",
+    "descripcion_dominio": "El sistema interactúa con dos roles principales: Investigadores y Administradores. Los investigadores pueden subir sus propuestas en formato PDF y registrar sus horas dedicadas. Cuando un investigador supera el presupuesto asignado en un rubro, el sistema debe bloquear el gasto y enviar una alerta. Si un proyecto alcanza el 100% de sus hitos sin subir el informe técnico final, el sistema restringe la creación de nuevos proyectos para ese autor.",
+    "fecha_registro": "2026-06-19 21:33:02"
+  },
+  {
+    "nombre_proyecto": "SGR-IEEE830",
+    "objetivo_general": "Desarrollar e implementar una Sistemática de Generación de Requisitos (SGR) asistida por Inteligencia Artificial bajo los lineamientos del estándar IEEE 830 y la gramática EARS, orientada a mitigar la ambigüedad y optimizar la trazabilidad conceptual en proyectos de desarrollo de software académicos y profesionales",
+    "descripcion_dominio": "El dominio del sistema abarca la gestión de proyectos de ingeniería de software. El SGR debe permitir a los analistas ingresar la problemática del negocio y los objetivos de su sistema. \n\nPROBLEMÁTICA: Tradicionalmente, el levantamiento de requisitos se realiza en lenguaje natural libre, lo que genera ambigüedades, vacíos lógicos y malas interpretaciones por parte de los desarrolladores, elevando los costos de corrección en etapas avanzadas del ciclo de vida del software.\n\nJUSTIFICACIÓN: Al incorporar Inteligencia Artificial local para validar la gramática EARS (Easy Approach to Requirements Syntax) y estructurar los entregables bajo el estándar IEEE 830, se garantiza la consistencia lógica. Además, la integración de flujos Spec-Driven Development (SDD) con herramientas como OpenSpec y pipelines de CI/CD (GitHub Actions) asegura que el entorno sea completamente reproducible y auditable, elevando la calidad del software desde su concepción científica.\n\nREGLAS DE NEGOCIO: El sistema interactúa con Analistas y Revisores. Cuando un analista ingresa un requisito que no cumple con las palabras clave condicionales de EARS (como 'WHEN' o 'THE SYSTEM SHALL'), el sistema debe rechazar el registro y emitir una alerta de sintaxis errónea. Si el analista completa con éxito la validación de un proyecto, el estado cambia automáticamente a 'Proposed' en la base de datos local JSON y se habilita la exportación matricial de los requerimientos no funcionales (Sección 3.2 de eficiencia, seguridad y portabilidad) y las reglas de negocio indexadas (Sección 3.3).",
+    "fecha_registro": "2026-06-19 21:41:55"
+  }
+]
