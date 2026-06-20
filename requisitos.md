@@ -2,13 +2,13 @@
 status: proposed
 version: 1.0
 authors: Marylin Alvarado
+date: 2026-06-19
 ---
 
-## Historial de Revisiones
-
+# HISTORIAL DE REVISIONES
 | Versión | Fecha | Autor | Descripción del Cambio |
-|---------|-------|-------|------------------------|
-| v1.0 | 19/06/2026 | Marylin Alvarado | Versión inicial del documento ERS IEEE 830 |
+| :--- | :--- | :--- | :--- |
+| 1.0 | 19/06/2026 | Marylin Alvarado | Inicialización del SGR, Problemática, Justificación y validación de Sintaxis EARS |
 
 # SGR - Sistema de Generación de Requisitos
 ## Especificación de Requisitos de Software según IEEE 830-1998
